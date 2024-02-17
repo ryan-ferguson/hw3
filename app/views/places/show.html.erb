@@ -3,9 +3,14 @@
 <h1><%= @place["name"] %></h1>
 
 <p>
-<a href="">New Post</a>
+<a href="/entries/new">New Post</a>
+</p>
+
+<p>
+  <%= button_to "Delete this company", @place, :method => "delete" %>
 </p>
 
 <p>
 <a href="/places">Back to All Places</a>
 </p>
+
