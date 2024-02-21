@@ -34,33 +34,33 @@ def create
 end
 
 def edit
-  # find a Company
+ 
   @place = Place.find_by({ "id" => params["id"] })
-  # render view with edit Company form
+ 
 end
 
 def update
-  # find a Company
+  
   @place = Place.find_by({ "id" => params["id"] })
 
-  # assign user-entered form data to Company's columns
+ 
   @place["name"] = params["name"]
 
-  # save Company row
+ 
   @place.save
 
-  # redirect user
+  
   redirect_to "/places"
 end
 
 def destroy
-  # find a Company
+ 
   @place = Place.find_by({ "id" => params["id"] })
 
-  # destroy Company row
+  
   @place.destroy
 
-  # redirect user
+  
   redirect_to "/places"
 end
 
