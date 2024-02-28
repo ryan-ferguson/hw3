@@ -2,12 +2,25 @@
 
 <h1><%= @place["name"] %></h1>
 
+<h3>Posts</h3>
+
+<ul>
+  <% for post in @posts %>
+    <li>
+      <a href="/entries/<%= post["id"] %>">
+        <%= post["description"] %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+
 <p>
-<a href="/entries/new">New Post</a>
+<a href="/entries/new?place_id=<%= @place["id"] %>">New Post</a>
 </p>
 
 <p>
-  <%= button_to "Delete this company", @place, :method => "delete" %>
+  <%= button_to "Delete place", @place, :method => "delete" %>
 </p>
 
 <p>
